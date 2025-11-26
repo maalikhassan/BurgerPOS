@@ -3,76 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🍔 Burger POS - Order Now</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>👗 FashionRack POS</title>
     <link rel="stylesheet" href="components/css/style.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="navbar">
-            <div class="nav-container">
-                <a href="#" class="logo">🍔 BurgerPOS</a>
-                
-                <button class="menu-toggle" id="menuToggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="#home" class="nav-link active" data-page="home" onclick="loadHome()">Home</a></li>
-                    <li><a href="#shop" class="nav-link" data-page="shop" onclick="loadShop()">Shop</a></li>
-                    <li><a href="#cart" class="nav-link" data-page="cart" onclick="loadCart()">Cart</a></li>
-                    <li><a href="#login" class="nav-link" data-page="login" onclick="loadLogin()">Login</a></li>
-                </ul>
-
-                <div class="nav-icons">
-                    <button class="icon-btn" title="Cart">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">0</span>
-                    </button>
-                </div>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <h1>👗 FashionRack<br>POS</h1>
+            <div class="nav-links">
+                <button class="nav-btn" onclick="showProducts()">Products</button>
+                <button class="nav-btn" onclick="showCart()">Cart</button>
+                <button class="nav-btn" onclick="showCustomers()">Customers</button>
+                <button class="nav-btn" onclick="showOrders()">Orders</button>
             </div>
         </nav>
-    </header>
 
+        <!-- Main Content -->
+        <main class="content">
+            <!-- Products Section -->
+            <div id="productsSection" class="section active">
+                <h2>Products by Category</h2>
+                <div class="category-buttons">
+                    <button onclick="filterCategory('shirts')" class="category-btn">Shirts</button>
+                    <button onclick="filterCategory('pants')" class="category-btn">Pants</button>
+                    <button onclick="filterCategory('accessories')" class="category-btn">Accessories</button>
+                </div>
+                <div class="product-grid" id="productsList"></div>
 
-    <!-- Main Content loads here from other pages-->
-    <main class="main-content">
-        <div id="app">tt</div>
-    </main>
-
-
-
-
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>🍔 BurgerPOS</h3>
-                <p>Fresh burgers, fast service, great taste!</p>
-            </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#shop">Menu</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Follow Us</h4>
-                <div class="social-links">
-                    <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <!-- Add Product Form -->
+                <div class="form-section">
+                    <h3>Add New Product</h3>
+                    <input type="text" id="productName" placeholder="Product Name">
+                    <input type="number" id="productPrice" placeholder="Price">
+                    <select id="productCategory">
+                        <option>Select Category</option>
+                        <option>Shirts</option>
+                        <option>Pants</option>
+                        <option>Accessories</option>
+                    </select>
+                    <button onclick="addProduct()">Add Product</button>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 BurgerPOS. All rights reserved.</p>
-        </div>
-    </footer>
+
+            <!-- Cart Section -->
+            <div id="cartSection" class="section">
+                <h2>Shopping Cart</h2>
+                <table id="cartTable">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Qty</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cartItems"></tbody>
+                </table>
+                
+                <div class="cart-summary">
+                    <label>Discount (%): <input type="number" id="discountPercent" min="0" max="100" value="0" onchange="calculateTotal()"></label>
+                    <p>Subtotal: $<span id="subtotal">0.00</span></p>
+                    <p>Discount: -$<span id="discountAmount">0.00</span></p>
+                    <p class="total">Total: $<span id="total">0.00</span></p>
+                    <button onclick="generateReceipt()" class="btn-primary">Generate Receipt</button>
+                </div>
+            </div>
+
+            <!-- Customers Section -->
+            <div id="customersSection" class="section">
+                <h2>Manage Customers</h2>
+                <div class="form-section">
+                    <h3>Add New Customer</h3>
+                    <input type="text" id="customerName" placeholder="Customer Name">
+                    <input type="email" id="customerEmail" placeholder="Email">
+                    <input type="phone" id="customerPhone" placeholder="Phone">
+                    <button onclick="addCustomer()">Add Customer</button>
+                </div>
+
+                <h3>Customers List</h3>
+                <table id="customersTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="customersList"></tbody>
+                </table>
+            </div>
+
+            <!-- Orders Section -->
+            <div id="ordersSection" class="section">
+                <h2>Order History</h2>
+                <table id="ordersTable">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Total</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ordersList"></tbody>
+                </table>
+            </div>
+        </main>
+    </div>
 
     <script src="components/js/app.js"></script>
 </body>

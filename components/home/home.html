@@ -1,0 +1,313 @@
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>🍔 Delicious Burgers Delivered Fast</h1>
+        <p>Fresh, juicy, and made with love. Order now and enjoy!</p>
+        <a href="#shop" class="btn btn-primary">Order Now</a>
+    </div>
+    <div class="hero-image">
+        <img src="https://via.placeholder.com/500x400?text=Burger+Meal" alt="Featured Burger">
+    </div>
+</section>
+
+<!-- Featured Burgers -->
+<section class="featured">
+    <div class="section-header">
+        <h2>⭐ Featured Burgers</h2>
+        <p>Check out our bestsellers</p>
+    </div>
+
+    <div class="burger-grid">
+        <!-- Burger Card 1 -->
+        <div class="burger-card">
+            <div class="burger-image">
+                <img src="https://via.placeholder.com/300x250?text=Classic+Burger" alt="Classic Burger">
+            </div>
+            <div class="burger-info">
+                <h3>Classic Burger</h3>
+                <p class="price">$5.99</p>
+                <p class="description">Juicy beef patty, lettuce, tomato, cheese</p>
+                <button class="btn btn-primary btn-sm">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Burger Card 2 -->
+        <div class="burger-card">
+            <div class="burger-image">
+                <img src="https://via.placeholder.com/300x250?text=Cheese+Burger" alt="Cheese Burger">
+            </div>
+            <div class="burger-info">
+                <h3>Double Cheese</h3>
+                <p class="price">$7.99</p>
+                <p class="description">Double patty, double cheese, crispy bacon</p>
+                <button class="btn btn-primary btn-sm">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Burger Card 3 -->
+        <div class="burger-card">
+            <div class="burger-image">
+                <img src="https://via.placeholder.com/300x250?text=Spicy+Burger" alt="Spicy Burger">
+            </div>
+            <div class="burger-info">
+                <h3>Spicy Deluxe</h3>
+                <p class="price">$8.99</p>
+                <p class="description">Hot sauce, jalapeños, spicy mayo</p>
+                <button class="btn btn-primary btn-sm">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Us Section -->
+<section class="why-us">
+    <h2>Why Choose Us?</h2>
+    
+    <div class="features">
+        <div class="feature-item">
+            <div class="feature-icon">🚀</div>
+            <h3>Fast Delivery</h3>
+            <p>Get your order in 30 minutes or less</p>
+        </div>
+
+        <div class="feature-item">
+            <div class="feature-icon">🌟</div>
+            <h3>Fresh Ingredients</h3>
+            <p>Always made with premium quality meat</p>
+        </div>
+
+        <div class="feature-item">
+            <div class="feature-icon">💰</div>
+            <h3>Great Prices</h3>
+            <p>Best burgers at the best prices in town</p>
+        </div>
+
+        <div class="feature-item">
+            <div class="feature-icon">😋</div>
+            <h3>Delicious Taste</h3>
+            <p>Made by our expert burger chefs</p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta">
+    <h2>Ready for a Burger?</h2>
+    <p>Browse our full menu and place your order today!</p>
+    <a href="#shop" class="btn btn-secondary">View Full Menu</a>
+</section>
+
+<style>
+    /* Hero Section */
+    .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+        padding: 4rem 0;
+        margin-bottom: 3rem;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+        color: var(--dark);
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: 2rem;
+    }
+
+    .hero-image img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Featured Burgers */
+    .featured {
+        margin: 4rem 0;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .section-header h2 {
+        font-size: 2.2rem;
+        color: var(--dark);
+        margin-bottom: 0.5rem;
+    }
+
+    .section-header p {
+        color: #999;
+        font-size: 1.1rem;
+    }
+
+    .burger-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+
+    .burger-card {
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        transition: 0.3s;
+    }
+
+    .burger-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .burger-image {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .burger-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .burger-info {
+        padding: 1.5rem;
+    }
+
+    .burger-info h3 {
+        font-size: 1.3rem;
+        color: var(--dark);
+        margin-bottom: 0.5rem;
+    }
+
+    .price {
+        font-size: 1.4rem;
+        color: var(--primary);
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    .description {
+        color: #666;
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+        line-height: 1.4;
+    }
+
+    .btn-sm {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+        width: 100%;
+    }
+
+    /* Why Us Section */
+    .why-us {
+        background: #f9f9f9;
+        padding: 3rem 0;
+        margin: 4rem 0;
+        border-radius: 10px;
+    }
+
+    .why-us h2 {
+        text-align: center;
+        font-size: 2.2rem;
+        color: var(--dark);
+        margin-bottom: 3rem;
+    }
+
+    .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
+    }
+
+    .feature-item {
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .feature-item h3 {
+        font-size: 1.2rem;
+        color: var(--dark);
+        margin-bottom: 0.5rem;
+    }
+
+    .feature-item p {
+        color: #666;
+        font-size: 0.95rem;
+    }
+
+    /* CTA Section */
+    .cta {
+        background: linear-gradient(135deg, var(--dark) 0%, #2a1410 100%);
+        color: #fff;
+        padding: 3rem;
+        border-radius: 10px;
+        text-align: center;
+        margin: 4rem 0;
+    }
+
+    .cta h2 {
+        font-size: 2rem;
+        color: #fff;
+        margin-bottom: 1rem;
+    }
+
+    .cta p {
+        color: #ddd;
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .hero {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .hero-content h1 {
+            font-size: 2rem;
+        }
+
+        .hero-content p {
+            font-size: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+        }
+
+        .burger-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .features {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .cta {
+            padding: 2rem 1rem;
+        }
+
+        .cta h2 {
+            font-size: 1.5rem;
+        }
+    }
+</style>

@@ -3,16 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Burger POS</title>
+    <title>🍔 Burger POS - Order Now</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="components/css/style.css">
 </head>
-    <div >
-
-
-    </div>
-
 <body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="#" class="logo">🍔 BurgerPOS</a>
+                
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link active" data-page="home" onclick="loadHome()">Home</a></li>
+                    <li><a href="#shop" class="nav-link" data-page="shop" onclick="loadShop()">Shop</a></li>
+                    <li><a href="#cart" class="nav-link" data-page="cart" onclick="loadCart()">Cart</a></li>
+                    <li><a href="#login" class="nav-link" data-page="login" onclick="loadLogin()">Login</a></li>
+                </ul>
+
+                <div class="nav-icons">
+                    <button class="icon-btn" title="Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Main Content loads here from other pages-->
+    <main class="main-content">
+        <div id="app">tt</div>
+    </main>
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>🍔 BurgerPOS</h3>
+                <p>Fresh burgers, fast service, great taste!</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#shop">Menu</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 BurgerPOS. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script src="components/js/app.js"></script>
 </body>
-
 </html>
